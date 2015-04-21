@@ -32,9 +32,13 @@ def main():
     else:
         alfresco_url = "http://" + host + "/alfresco/service/api/login?u=" + user + '&pw=' + password
 
-    r = requests.get(alfresco_url)
+    try:
+        r = requests.get(alfresco_url, timeout=5)
+    except Exception, err:
+        print 'CRITICAL - A connection failure has occurred'
+        return 1
 
-    print r.text # Uncomment to debug response
+#    print r.text # Uncomment to debug response
 
     if 'Login failed' in r.text:
         print 'CRITICAL - Login failed because of wrong username/password'
