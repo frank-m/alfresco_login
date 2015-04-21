@@ -47,7 +47,7 @@ def main():
         print 'CRITICAL - Login failed no ticket found in response.'
         return 2
     elif '<ticket>TICKET_' in r.text:
-        print 'OK - Succefully logged in to alfresco'
+        print 'OK - Succesfully logged in to alfresco'
         return 0
 
 if __name__ == "__main__":
