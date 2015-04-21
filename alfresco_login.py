@@ -36,7 +36,7 @@ def main():
         r = requests.get(alfresco_url, timeout=5)
     except Exception, err:
         print 'CRITICAL - A connection failure has occurred'
-        return 1
+        return 2
 
 #    print r.text # Uncomment to debug response
 
